@@ -64,6 +64,8 @@ void setup() {
   } else {
     xMod.DisplayDebug("Failed to connect Wifi");
   }
+  //APIKey登録
+  xMod.OpenAI.SetAPIKey("your APIKey");
 
   // SDカードの接続確認
   xMod.SDM.begin();

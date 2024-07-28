@@ -22,8 +22,8 @@ namespace xdiversity
             HTTPClient http;
             bool firstTry = true;
             DynamicJsonDocument GPTTalkLog{JSON_BUFFER_LEN};
-            String api_key;
-            String model;
+            String api_key = "api_key";
+            String model = "gpt-4o";
 
     };
 }
