@@ -3,13 +3,22 @@
     "version": "0.0.1",
     "description": "xMod Library",
     "keywords": "M5, Toio",
-    "dependencies":
-    {
+    "authors": {
+        "name": "author"
+      },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xdiversity/xMod-lib.git"
+    },
+    "dependencies": {
         "m5stack/M5Unified": "^0.1.12",
         "m5stack/M5GFX": "^0.1.12",
         "kenichi884/M5StackToio": "^1.0.4",
         "h2zero/NimBLE-Arduino": "^1.4.2",
         "fortyseveneffects/MIDI Library": "^5.0.2",
         "bblanchon/ArduinoJson": "^7.1.0"
-    }
+    },
+    "frameworks": "*",
+    "platforms": "*",
+    "headers": "xMod.hpp"
 }
