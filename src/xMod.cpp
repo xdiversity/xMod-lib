@@ -100,27 +100,6 @@ void xdiversity::xMod_Class::setDebugSerial(){
     debugMode = DEBUG_MODE_SERIAL;
 }
 
-void xdiversity::xMod_Class::bluetoothSpeakerStart(){
-    xMod.WaveOut.enable_Speaker();
-    
-    // Initialize I2S audio output
-    i2s_pin_config_t pinConfig = {
-        .bck_io_num = I2S_BCK_PIN,
-        .ws_io_num = I2S_WS_PIN,
-        .data_out_num = I2S_DOUT_PIN,
-        .data_in_num = I2S_PIN_NO_CHANGE
-    };
-
-    // Set up Bluetooth A2DP sink
-    a2dpSink.set_pin_config(pinConfig);
-    a2dpSink.start("M5Stack Speaker");
-}
-
-void xdiversity::xMod_Class::bluetoothSpeakerEnd(){
-    a2dpSink.end("M5Stack Speaker");
-    xMod.WaveOut.disable_Speaker();
-}
-
 void xdiversity::xMod_Class::aw9523_init_core2() {
     // Reset AW9523
     i2c_write(AW9523_ADDR, AW9523_REG_SOFTRESET, 1, 0x00, 1);

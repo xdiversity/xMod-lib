@@ -89,17 +89,11 @@ namespace xdiversity
 
             void setDebugSerial();
 
-            void bluetoothSpeakerStart();
-
-            void bluetoothSpeakerEnd();
-
         private:
             static void aw9523_init_core2();
             static void aw9523_init_cores3();
 
             xMod_DebugMode debugMode = DEBUG_MODE_NONE;
-
-            BluetoothA2DPSink a2dpSink;
     };
 }
 
