@@ -63,7 +63,7 @@ void xdiversity::xMod_Class::recordSound(int time){
 }
 
 void xdiversity::xMod_Class::DisplayDebug(const String& message){
-    if (debugMode == 1){
+    if (debugMode == DEBUG_MODE_DISPLAY){
         const lgfx::IFont* userFont = M5.Display.getFont();
         int32_t cursorY = M5.Display.getCursorY();
 
@@ -83,15 +83,42 @@ void xdiversity::xMod_Class::DisplayDebug(const String& message){
         M5.Display.display();
         //フォントを戻す
         M5.Display.setFont(userFont);
-    } else if (debugMode == 2){
+    } else if (debugMode == DEBUG_MODE_SERIAL){
         Serial.println(message);
     }
 }
 
-void xdiversity::xMod_Class::setDebugMode(int mode){
-    if (0 <= mode && mode < 3){
-        debugMode = mode;
-    }
+void xdiversity::xMod_Class::setDebugNone(){
+    debugMode = DEBUG_MODE_NONE;
+}
+
+void xdiversity::xMod_Class::setDebugDisplay(){
+    debugMode = DEBUG_MODE_DISPLAY;
+}
+
+void xdiversity::xMod_Class::setDebugSerial(){
+    debugMode = DEBUG_MODE_SERIAL;
+}
+
+void xdiversity::xMod_Class::bluetoothSpeakerStart(){
+    xMod.WaveOut.enable_Speaker();
+    
+    // Initialize I2S audio output
+    i2s_pin_config_t pinConfig = {
+        .bck_io_num = I2S_BCK_PIN,
+        .ws_io_num = I2S_WS_PIN,
+        .data_out_num = I2S_DOUT_PIN,
+        .data_in_num = I2S_PIN_NO_CHANGE
+    };
+
+    // Set up Bluetooth A2DP sink
+    a2dpSink.set_pin_config(pinConfig);
+    a2dpSink.start("M5Stack Speaker");
+}
+
+void xdiversity::xMod_Class::bluetoothSpeakerEnd(){
+    a2dpSink.end("M5Stack Speaker");
+    xMod.WaveOut.disable_Speaker();
 }
 
 void xdiversity::xMod_Class::aw9523_init_core2() {

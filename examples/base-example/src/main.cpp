@@ -30,7 +30,7 @@ void setup() {
   xMod.begin();
 
   //デバッグ画面表示を許可
-  xMod.setDebugMode(1);
+  xMod.setDebugDisplay();
 
   // M5Coreディスプレイの初期化
   M5.Display.begin(); 

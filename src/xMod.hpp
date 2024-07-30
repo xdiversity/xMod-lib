@@ -14,6 +14,15 @@
 #include "utility/xMod_SD.hpp"
 #include "utility/xMod_OpenAI.hpp"
 
+#include <driver/i2s.h>
+#include <BluetoothA2DPSink.h>
+
+enum xMod_DebugMode {
+    DEBUG_MODE_NONE,
+    DEBUG_MODE_DISPLAY,
+    DEBUG_MODE_SERIAL
+};
+
 namespace xdiversity
 {
     struct config_t : public m5::M5Unified::config_t {
@@ -77,14 +86,23 @@ namespace xdiversity
 
             void DisplayDebug(const String& message);
 
-            void setDebugMode(int mode);
+            void setDebugNone();
+
+            void setDebugDisplay();
+
+            void setDebugSerial();
+
+            void bluetoothSpeakerStart();
+
+            void bluetoothSpeakerEnd();
 
         private:
             static void aw9523_init_core2();
             static void aw9523_init_cores3();
 
-            //デバッグ表示 0:表示なし 1:画面表示 2:シリアル表示
-            uint8_t debugMode = 0;
+            xMod_DebugMode debugMode = DEBUG_MODE_NONE;
+
+            BluetoothA2DPSink a2dpSink;
     };
 }
 

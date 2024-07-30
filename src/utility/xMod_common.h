@@ -32,6 +32,11 @@
 #define LINEOUT_BIT     0b00000010
 #define MIDI_BIT        0b00000001
 
+// Define I2S pins for audio output
+#define I2S_BCK_PIN  0  // Bit Clock (BCK)
+#define I2S_WS_PIN   27  // Word Select (WS)
+#define I2S_DOUT_PIN 2  // Data Output (DOUT)
+
 #include <vector>
 #include <string>
 using namespace std;
