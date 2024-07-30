@@ -53,3 +53,5 @@ using namespace std;
 #include <HTTPClient.h>
 #include <base64.h>
 #include <ArduinoJson.h>
+#include <driver/i2s.h>
+#include <BluetoothA2DPSink.h>

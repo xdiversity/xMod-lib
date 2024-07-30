@@ -14,9 +14,6 @@
 #include "utility/xMod_SD.hpp"
 #include "utility/xMod_OpenAI.hpp"
 
-#include <driver/i2s.h>
-#include <BluetoothA2DPSink.h>
-
 enum xMod_DebugMode {
     DEBUG_MODE_NONE,
     DEBUG_MODE_DISPLAY,
