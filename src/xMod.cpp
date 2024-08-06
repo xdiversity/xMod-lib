@@ -56,8 +56,8 @@ void xdiversity::xMod_Class::begin(config_t cfg) {
 #endif
 }
 
-void xdiversity::xMod_Class::recordSound(int time){
-    xMod.Mic.recordStart();
+void xdiversity::xMod_Class::recordSound(int time, String filename){
+    xMod.Mic.recordStart(filename);
     delay(time);
     xMod.Mic.recordStop();
 }

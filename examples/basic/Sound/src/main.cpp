@@ -53,7 +53,7 @@ void loop() {
     if (xMod.SDM.checkSD()){
       delay(500);
       M5.Display.println("Record Start");
-      xMod.recordSound(2000);
+      xMod.recordSound(2000, "/audio.wav");
       M5.Display.println("Record Stop"); 
       delay(500);
 

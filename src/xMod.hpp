@@ -79,7 +79,7 @@ namespace xdiversity
 
             void begin(config_t cfg = config());
 
-            void recordSound(int time);
+            void recordSound(int time, String filename = "/audio.wav");
 
             void DisplayDebug(const String& message);
 
