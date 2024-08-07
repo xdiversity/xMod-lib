@@ -88,18 +88,6 @@ void xdiversity::xMod_Class::DisplayDebug(const String& message){
     }
 }
 
-void xdiversity::xMod_Class::setDebugNone(){
-    debugMode = DEBUG_MODE_NONE;
-}
-
-void xdiversity::xMod_Class::setDebugDisplay(){
-    debugMode = DEBUG_MODE_DISPLAY;
-}
-
-void xdiversity::xMod_Class::setDebugSerial(){
-    debugMode = DEBUG_MODE_SERIAL;
-}
-
 void xdiversity::xMod_Class::aw9523_init_core2() {
     // Reset AW9523
     i2c_write(AW9523_ADDR, AW9523_REG_SOFTRESET, 1, 0x00, 1);

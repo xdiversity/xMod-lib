@@ -83,11 +83,7 @@ namespace xdiversity
 
             void DisplayDebug(const String& message);
 
-            void setDebugNone();
-
-            void setDebugDisplay();
-
-            void setDebugSerial();
+            void setDebugMode(xMod_DebugMode mode){ debugMode = mode; }
 
         private:
             static void aw9523_init_core2();

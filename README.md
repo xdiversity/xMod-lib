@@ -1065,9 +1065,25 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `message`     | `const String&` | ✔︎   | 表示文章
 
-- void setDebugNone();
-  - デバッグモードの文字を表示しないようにする
-- void setDebugDisplay();
-  - デバッグモードの文字をディスプレイ上に表示するようにする
-- void setDebugSerial();
-  - デバッグモードの文字をシリアルモニタ上に表示するようにする
+### `xMod.setDebugMode()` 
+デバッグモードの出力先を指定します。
+出力なし、画面表示、シリアル出力があります。
+
+#### プロトタイプ宣言
+
+```c++
+enum xMod_DebugMode {
+    DEBUG_MODE_NONE,
+    DEBUG_MODE_DISPLAY,
+    DEBUG_MODE_SERIAL
+};
+
+ void setDebugMode(xMod_DebugMode mode);
+```
+
+#### 引数
+
+No. | 変数名    | 型         | 必須   | 説明
+:---|:---------|:-----------|:-------|:-------------
+1   | `mode`     | `xMod_DebugMode` | ✔︎   | 表示なしなら”DEBUG_MODE_NONE”、画面表示なら”DEBUG_MODE_DISPLAY”、シリアル出力なら”DEBUG_MODE_SERIAL”
+
