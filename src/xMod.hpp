@@ -48,14 +48,6 @@ namespace xdiversity
                 return cfg;
             }
 
-            // M5の主要コンポーネントへの直接アクセスを提供
-            // M5GFX& Display() { return M5.Display; }
-            // M5GFX& Lcd() { return M5.Display; }
-            // m5::Button_Class& BtnA() { return M5.BtnA; }
-            // m5::Button_Class& BtnB() { return M5.BtnB; }
-            // m5::Button_Class& BtnC() { return M5.BtnC; }
-            // m5::I2C_Class& In_I2C() { return M5.In_I2C; }
-
             // xMod固有のコンポーネントへのアクセス
             xMod_Button BtnL = xMod_Button(4);
             xMod_Button BtnR = xMod_Button(5);
