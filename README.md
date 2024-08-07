@@ -11,15 +11,15 @@ xModを操作するためのライブラリです。m5stack,Toioと共に利用�
 * [Toio操作](#class_toio)
 * [MIDI](#class_midi)
 * [その他](#class_others)
+* [M5Unified・M5GFX提供機能](#m5unifiedGFX)
 
 ## <a id="class_button">ボタン</a>
 
 ### クラス名：xMod.BtnX 
-Xはボタンごとに異なります。
+Xはボタンごとに異なります。 
 
-BtnL, BtnR(xMod上側面の物理ボタン)
-
-BtnA, BtnB, BtnC(タッチパネル下部にある赤いボタン)
+- BtnL(xMod上側面左の物理ボタン)
+- BtnR(xMod上側面右の物理ボタン)
 
 ### index
 * [isPressed()](#button_isPressed)
@@ -1173,3 +1173,50 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `mode`     | `xMod_DebugMode` | ✔︎   | 表示なしなら”DEBUG_MODE_NONE”、画面表示なら”DEBUG_MODE_DISPLAY”、シリアル出力なら”DEBUG_MODE_SERIAL”
 
+## <a id = "m5unifiedGFX">M5Unified・M5GFX提供機能</a>
+M5stack core2/s3単体で実現する機能についてはM5Unifiedライブラリ、M5GFXライブラリをそのまま利用することができます。
+
+M5UnifiedライブラリはM5stackの機能全般を扱えるライブラリで、M5GFXライブラリは画面表示に特化したライブラリです。
+
+詳細については以下のドキュメントを参考にしてください。
+
+https://docs.m5stack.com/ja/arduino/m5unified/helloworld
+
+https://github.com/m5stack/M5Unified/tree/master
+
+いくつか使用頻度が高いものを挙げます。
+
+### ボタン
+
+タッチパネル下部のボタンを扱います。左からボタンA、ボタンB、ボタンCという名前になっています。
+
+それぞれM5.BtnXというクラスでアクセスすることができます。
+
+#### コードサンプル
+
+```c++
+if (M5.BtnA.isPressed()){
+    M5.Display.println("ボタンAが押されています");
+} else {
+    M5.Display.println("ボタンAは押されていません");
+}
+```
+
+### 画面表示
+
+M5GFXライブラリを用いてタッチパネル上の表示を実装することができます。
+
+M5.Displayというクラスでアクセスすることができます。
+
+#### コードサンプル
+
+```c++
+//文字出力座標を指定　左上(0,0)〜右下(320,240)
+M5.Display.setCursor(0, 0);
+//文章を表示
+M5.Display.println("画面に文字を表示");
+//(0,0)から辺の長さ100の正方形の枠を描画
+M5.Display.drawRect(0, 0, 100, 100, WHITE);
+//画面全体に黒で塗りつぶされた長方形を描画することで画面の削除を行う
+M5.Display.fillRect(0, 0, 320, 240, BLACK);
+```

@@ -22,11 +22,6 @@ void setup() {
     }
   }
   M5.Display.println("SD Connected");
-
-  // MIDI出力の有効化
-  xMod.MIDI.enable_MIDI();
-  xMod.MIDI.setMode(MIDI_MODE_OUT);
-  xMod.MIDI.begin();
   
 }
 
@@ -38,14 +33,10 @@ void loop() {
   if (xMod.BtnL.isPressed()){
     // 音声・振動出力（低い周波数）
     xMod.WaveOut.tone(50, 100, -1, false);
-    // MIDI出力
-    xMod.MIDI.sendNoteOn(60, 127, 1);
   }
   else if (xMod.BtnR.isPressed()){
     // 音声・振動出力（高い周波数）
     xMod.WaveOut.tone(500, 100, -1, false);
-    // MIDI出力
-    xMod.MIDI.sendNoteOn(60, 127, 2);
   }
   // M5Coreのボタンが押されている場合
   else if (M5.BtnA.isPressed()){
