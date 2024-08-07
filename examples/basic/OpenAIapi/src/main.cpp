@@ -27,8 +27,8 @@ void loop() {
   //　xModの更新処理：M5の更新処理も内部で行われる
   xMod.update();
 
-  // 真ん中のボタンが押された時
-  if (M5.BtnB.isPressed()){
+  // 左のボタンが押された時
+  if (M5.BtnL.isPressed()){
     // GPT APIにテキストを送信
     String message = "hello!";
     M5.Display.printf("send : %s\n", message);

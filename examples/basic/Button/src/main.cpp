@@ -44,16 +44,6 @@ void loop() {
   else if (xMod.BtnR.isPressed()){
     M5.Display.print("R"); 
   }
-  // M5Coreのボタンが押されている場合
-  else if (M5.BtnA.isPressed()){
-    M5.Display.print("A");
-  }
-  else if (M5.BtnB.isPressed()){
-    M5.Display.print("B");
-  } 
-  else if (M5.BtnC.isPressed()){
-    M5.Display.print("C");
-  }
   else if (Button_Record_isPressed()){
     M5.Display.print("o");
   }

@@ -3,8 +3,6 @@
 //繋げたいtoioのID
 String toioID = "11b";
 
-bool LEDstatus = false;
-
 uint8_t charumera_data[39] = {
   3,             // 制御の種類 
   1,             // 繰り返し回数
@@ -50,35 +48,44 @@ void loop() {
 
   // xModの物理ボタンが押されている場合
   if (xMod.BtnL.isPressed()){
-     M5.Display.println("Play sound effect");
-    // Toioで音を鳴らす
+
     if (xMod.Toio.isConnected()){
+      // 背面のLEDをOnする
+      M5.Display.println("LED ON");
+      xMod.Toio.turnOnLed(255,0,0);
+
+      // Toioで音を鳴らす
+      M5.Display.println("Play sound effect");
       xMod.Toio.playSoundEffect(3);
-      delay(100);
+      delay(500);
+
+      //MIDIをToioで再生
+      M5.Display.println("Play Charumera");
+      xMod.Toio.playSoundRaw(charumera_data, 39);
+      delay(4000);
+
+      // 背面のLEDをOn/Offする
+      M5.Display.println("LED OFF");
+      xMod.Toio.turnOffLed();
     }
+
   }
   else if (xMod.BtnR.isPressed()){
-    //MIDIをToioで再生
-    M5.Display.println("Play Charumera");
-    xMod.Toio.playSoundRaw(charumera_data, 39);
-    delay(2500);
-  }
-  // M5Coreのボタンが押されている場合
-  else if (M5.BtnA.isPressed()){
-    ToioCoreIDData data = xMod.Toio.getIDReaderData();
-    //プレイマット上にいる場合、座標・角度検出
-    if (data.type == ToioCoreIDTypePosition) {
-      M5.Display.printf("(x,y)=(%d,%d) degree=%d", data.position.cubePosX, data.position.cubePosY, data.position.cubeAngleDegree);
-      M5.Display.print("\n");
-    } else {
-      M5.Display.println("Toio is not on the mat");
-    }
-  }
-  else if (M5.BtnB.isPressed()){
-    M5.Display.println("Move");
 
-    // Toioを動かす
     if (xMod.Toio.isConnected()){
+      //プレイマット上にいる場合、座標・角度検出
+      ToioCoreIDData data = xMod.Toio.getIDReaderData();
+      if (data.type == ToioCoreIDTypePosition) {
+        M5.Display.printf("(x,y)=(%d,%d) degree=%d", data.position.cubePosX, data.position.cubePosY, data.position.cubeAngleDegree);
+        M5.Display.print("\n");
+      } else {
+        M5.Display.println("Toio is not on the mat");
+      }
+
+      delay(1000);
+
+      M5.Display.println("Move");
+      // Toioを動かす
       //前進
       xMod.Toio.controlMotor(true, 10, true, 10, 1000); 
       delay(1000);
@@ -92,20 +99,7 @@ void loop() {
       xMod.Toio.controlMotor(false, 10, true, 10, 1000); 
       delay(1000);
     }
-  } 
-  else if (M5.BtnC.isPressed()){
-    // 背面のLEDをOn/Offする
-    if (xMod.Toio.isConnected()){
-      if (!LEDstatus){
-        M5.Display.println("LED ON");
-        LEDstatus = true;
-        xMod.Toio.turnOnLed(255,0,0);
-      } else {
-        M5.Display.println("LED OFF");
-        LEDstatus = false;
-        xMod.Toio.turnOffLed();
-      }
-    }
+
   }
   
   delay(100);
