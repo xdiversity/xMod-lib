@@ -1,7 +1,18 @@
 # xModLib
 xModを操作するためのライブラリです。m5stack,Toioと共に利用することを想定しています。
 
-## ボタン
+## Index
+
+* [ボタン](#class_button)
+* [マイク](#class_mic)
+* [スピーカー・振動](#class_speaker)
+* [SDカード](#class_sd)
+* [OpenAI API](#class_openai)
+* [Toio操作](#class_toio)
+* [MIDI](#class_midi)
+* [その他](#class_others)
+
+## <a id="class_button">ボタン</a>
 
 ### クラス名：xMod.BtnX 
 Xはボタンごとに異なります。
@@ -50,7 +61,7 @@ bool wasReleased();
 bool isHeld();
 ```
 
-## マイク
+## <a id="class_mic">マイク</a>
 ### クラス名：xMod.Mic
 
 ### `recordStart()` 
@@ -79,7 +90,7 @@ No. | 変数名    | 型         | 必須   | 説明
 void recordStop();
 ```
 
-## スピーカー・振動
+## <a id = "class_speaker">スピーカー・振動</a>
 ### クラス名：xMod.WaveOut
 
 ### `begin()` 
@@ -252,7 +263,7 @@ void disable_LineOut();
 
            
 
-## SDカード
+## <a id="class_sd">SDカード</a>
 ### クラス名：xMod.SDM
 
 ### `begin()` 
@@ -275,7 +286,7 @@ SDカードがマウントされているかどうかをboolで返します。
 bool checkSD();
 ```
 
-## OpenAI API
+## <a id="class_openai">OpenAI API</a>
 
 ### クラス名：xMod.OpenAI
 
@@ -329,7 +340,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `text`     | `String` | ✔︎   | gptに送るメッセージ
 
-## Toio操作
+## <a id="class_toio">Toio操作</a>
 ### クラス名 : xMod.Toio
 
 ### `searchToio()` 
@@ -930,7 +941,7 @@ else {
 
 https://github.com/kenichi884/M5StackToio/blob/master/README_jp.md
 
-## MIDI
+## <a id="class_midi">MIDI</a>
 ### クラス名：xMod.MIDI
 
 ### `begin()` 
@@ -998,7 +1009,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `mode`     | `xMod_MIDIMode` | ✔︎   | MIDIの入出力モード指定。入力モードなら"MIDI_MODE_IN"、出力モードなら”MIDI_MODE_OUT"を指定。
 
-## その他
+## <a id="class_others">その他</a>
 ### `xMod.begin()` 
 xModクラスに関連した初期処理を全て行います。基本的にsetup()内で実行してください。
 
