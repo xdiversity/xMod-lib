@@ -28,7 +28,7 @@ void loop() {
   xMod.update();
 
   // 左のボタンが押された時
-  if (M5.BtnL.isPressed()){
+  if (xMod.BtnL.isPressed()){
     // GPT APIにテキストを送信
     String message = "hello!";
     M5.Display.printf("send : %s\n", message);
