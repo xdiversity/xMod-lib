@@ -21,7 +21,13 @@ BtnL, BtnR(xMod上側面の物理ボタン)
 
 BtnA, BtnB, BtnC(タッチパネル下部にある赤いボタン)
 
-### `isPressed()` 
+### index
+* [isPressed()](#button_isPressed)
+* [wasPressed()](#button_wasPressed)
+* [wasReleased()](#button_wasReleased)
+* [isHeld()](#button_isHeld)
+
+### <a id = "button_isPressed">`isPressed()` </a>
 
 今ボタンが押されているかどうかをboolで返します。
 
@@ -31,7 +37,7 @@ BtnA, BtnB, BtnC(タッチパネル下部にある赤いボタン)
 bool isPressed();
 ```
 
-### `wasPressed()` 
+### <a id = "button_wasPressed">`wasPressed()` </a>
 
 新たにボタンが押されたかどうかをboolで返します。
 
@@ -41,7 +47,7 @@ bool isPressed();
 bool wasPressed();
 ```
 
-### `wasReleased()` 
+### <a id = "button_wasReleased">`wasReleased()` </a>
 
 ボタンが押されていない状態になったかどうかをboolで返します。
 
@@ -51,7 +57,7 @@ bool wasPressed();
 bool wasReleased();
 ```
 
-### `isHeld()` 
+### <a id = "button_isHeld">`isHeld()` </a>
 
 ボタンが押し続けられているかどうかをboolで返します。
 
@@ -64,7 +70,11 @@ bool isHeld();
 ## <a id="class_mic">マイク</a>
 ### クラス名：xMod.Mic
 
-### `recordStart()` 
+### index
+* [recordStart()](#mic_recordStart)
+* [recordStop()](#mic_recordStop)
+
+### <a id = "mic_recordStart">`recordStart()` </a>
 
 録音を開始します。事前にSDカードのマウントが必要です。指定したファイル名で保存されます。ファイル形式はwavです。
 
@@ -80,7 +90,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `filename`     | `String` |      | 録音結果を保存する先のファイル名です。.wavの形で指定してください。デフォルトは”audio.wav"となります。
 
-### `recordStop()` 
+### <a id = "mic_recordStop">`recordStop()` </a>
 
 録音を終了します。recordStard()で開始された録音はこの関数によって停止されるまで続きます。
 
@@ -93,7 +103,23 @@ void recordStop();
 ## <a id = "class_speaker">スピーカー・振動</a>
 ### クラス名：xMod.WaveOut
 
-### `begin()` 
+### index
+* [begin()](#speaker_begin)
+* [end()](#speaker_end)
+* [isPlaying()](#speaker_isPlaying)
+* [setVolume()](#speaker_setVolume)
+* [getVolume()](#speaker_getVolume)
+* [stop()](#speaker_stop)
+* [tone()](#speaker_tone)
+* [playWavFile()](#speaker_playWavFile)
+* [enable_Speaker()](#speaker_enable_Speaker)
+* [disable_Speaker()](#speaker_disable_Speaker)
+* [enable_LRA()](#speaker_enable_LRA)
+* [disable_LRA()](#speaker_disable_LRA)
+* [enable_LineOut()](#speaker_enable_LineOut)
+* [disable_LineOut()](#speaker_disable_LineOut)
+
+### <a id = "speaker_begin">`begin()` </a>
 
 スピーカー周辺機能を利用するための初期処理を行います。
 このクラスを利用する際は最初に実行してください。
@@ -104,7 +130,7 @@ void recordStop();
 void begin();
 ```
 
-### `end()` 
+### <a id = "speaker_end">`end()` </a>
 
 スピーカー周辺機能の利用を終了します。
 
@@ -114,7 +140,7 @@ void begin();
 void end();
 ```
 
-### `isPlaying()` 
+### <a id = "speaker_isPlaying">`isPlaying()` </a>
 
 スピーカーが再生中かどうかをboolで返します。
 
@@ -124,7 +150,7 @@ void end();
 bool isPlaying();
 ```
 
-### `setVolume()` 
+### <a id = "speaker_setVolume">`setVolume()` </a>
 
 スピーカーの音量を指定した値に調整します。
 
@@ -140,7 +166,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `volume`     | `uint8_t` | ✔︎    | スピーカーの音の大きさ(0-255)
 
-### `setVolume()` 
+### <a id = "getVolume">`getVolume()` </a>
 
 スピーカーの音量の大きさを取得します。
 
@@ -150,7 +176,7 @@ No. | 変数名    | 型         | 必須   | 説明
 uint8_t getVolume();
 ```
 
-### `stop()` 
+### <a id = "speaker_stop">`stop()` </a>
 
 スピーカーの動作を中断します。
 
@@ -166,7 +192,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `channel`     | `uint8_t` |      | 動作を止めるチャンネルを指定することもできます。指定しなければ全部のチャンネルの動作を止めます。
 
-### `tone()` 
+### <a id = "speaker_tone">`tone()` </a>
 
 振動数で指定した高さの音を鳴らします。鳴らせたかどうかをboolで返します。
 
@@ -185,7 +211,7 @@ No. | 変数名    | 型         | 必須   | 説明
 3   | `channel`     | `int` |      | チャンネル
 4   | `stop_current_sound`   | `bool` |      | すでに音が鳴っている場合に、その音を止めつつこの音を再生するかどうか
 
-### `playWavFile()` 
+### <a id = "speaker_playWavFile">`playWavFile()` </a>
 
 指定したwavファイルを再生します。
 
@@ -201,7 +227,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `filename`     | `const char*` | ✔︎   | ファイル名。wavファイルを指定してください。
 
-### `enable_Speaker()` 
+### <a id = "speaker_enable_Speaker">`enable_Speaker()` </a>
 
 音の出力を行う機器をスピーカーに指定します。事前に他の指定を行なっている場合はその指定を解除してから指定を行ってください。
 
@@ -211,7 +237,7 @@ No. | 変数名    | 型         | 必須   | 説明
 void enable_Speaker();
 ```
 
-### `disable_Speaker()` 
+### <a id = "speaker_disable_Speaker">`disable_Speaker()` </a> 
 
 スピーカーに対する音の出力を行う機器の指定を解除します。
 
@@ -221,7 +247,7 @@ void enable_Speaker();
 void disable_Speaker();
 ```
 
-### `enable_LRA()` 
+### <a id = "speaker_enable_LRA">`enable_LRA()` </a>
 
 音の出力を行う機器を振動アクチュエータに指定します。事前に他の指定を行なっている場合はその指定を解除してから指定を行ってください。
 
@@ -231,7 +257,7 @@ void disable_Speaker();
 void enable_LRA();
 ```
 
-### `disable_LRA()` 
+### <a id = "disable_LRA">`disable_LRA()` </a>
 
 振動アクチュエータに対する音の出力を行う機器の指定を解除します。
 
@@ -241,7 +267,7 @@ void enable_LRA();
 void disable_LRA();
 ```
 
-### `enable_LineOut()` 
+### <a id = "speaker_enable_LineOut">`enable_LineOut()` </a>
 
 音の出力を行う機器をラインアウト(イヤホンジャック)に指定します。事前に他の指定を行なっている場合はその指定を解除してから指定を行ってください。
 
@@ -251,7 +277,7 @@ void disable_LRA();
 void enable_LineOut();
 ```
 
-### `disable_LineOut()` 
+### <a id = "speaker_disable_LineOut">`disable_LineOut()`</a> 
 
 ラインアウト(イヤホンジャック)に対する音の出力を行う機器の指定を解除します。
 
@@ -266,7 +292,11 @@ void disable_LineOut();
 ## <a id="class_sd">SDカード</a>
 ### クラス名：xMod.SDM
 
-### `begin()` 
+### index
+* [begin()](#sd_begin)
+* [checkSD()](#sd_checkSD)
+
+### <a id = "sd_begin">`begin()` </a>
 
 SDカードのマウントを行います。これを行わないとxModがSDカードを認識しません。
 
@@ -276,7 +306,7 @@ SDカードのマウントを行います。これを行わないとxModがSDカ
 void begin();
 ```
 
-### `checkSD()` 
+### <a id = "sd_checkSD">`checkSD()` </a>
 
 SDカードがマウントされているかどうかをboolで返します。
 
@@ -290,7 +320,13 @@ bool checkSD();
 
 ### クラス名：xMod.OpenAI
 
-### `SetAPIKey()` 
+### index
+* [SetAPIKey()](#openai_SetAPIKey)
+* [SetModel()](#openai_SetModel)
+* [GPT()](#openai_GPT)
+
+
+### <a id = "openai_SetAPIKey">`SetAPIKey()` </a>
 
 OpenAIのAPIキーを登録します。OpanAI APIに関連した機能を利用するには必須です。
 
@@ -306,7 +342,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `key`     | `String` | ✔︎   | APIキー
 
-### `SetModel()` 
+### <a id = "openai_SetModel">`SetModel()` </a>
 
 OpenAIのAPIキーにて利用するモデルを指定します。
 デフォルトは"gpt-4o"になっています。
@@ -324,7 +360,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `modelName`     | `String` | ✔︎   | モデルの名前。実在するモデルを指定してください。
 
-### `SetModel()` 
+### <a id = "openai_GPT">`GPT()`</a> 
 
 与えられたテキストをapiを通じてモデルに送信し、返答を得ます。
 利用するにはwifiの接続が必要です。
@@ -343,7 +379,30 @@ No. | 変数名    | 型         | 必須   | 説明
 ## <a id="class_toio">Toio操作</a>
 ### クラス名 : xMod.Toio
 
-### `searchToio()` 
+### index
+* [searchToio()](#toio_searchToio)
+* [connect()](#toio_connect)
+* [disconnect()](#toio_disconnect)
+* [isConnected()](#toio_isConnected)
+* [getAddress()](#toio_getAddress)
+* [getName()](#toio_getName)
+* [getBleProtocolVersion()](#toio_getBleProtocolVersion)
+* [playSoundEffect()](#toio_playSoundEffect)
+* [playSoundRaw()](#toio_playSoundRaw)
+* [stopSound()](#toio_stopSound)
+* [turnOnLed()](#toio_turnOnLed)
+* [turnOffLed()](#toio_turnOffLed)
+* [getBatteryLevel()](#toio_getBatteryLevel)
+* [getButtonState()](#toio_getButtonState)
+* [getMotion()](#toio_getMotion)
+* [controlMotor()](#toio_controlMotor)
+* [drive()](#toio_drive)
+* [controlMotorWithTarget()](#toio_controlMotorWithTarget)
+* [controlMotorWithMultipleTargets()](#toio_controlMotorWithMultipleTargets)
+* [controlMotorWithAcceleration()](#toio_controlMotorWithAcceleration)
+* [getIDReaderData()](#toio_getIDReaderData)
+
+### <a id="toio_searchToio">`searchToio()`</a>
 
 指定されたIDのToioを探します。
 IDが指定されていなければIDに関わらずToioを1つ探します。
@@ -363,7 +422,7 @@ No. | 変数名    | 型         | 必須   | 説明
 1   | `ID`     | `uint8_t*` | ✔     | ToioのID
 
 
-### `connect()`
+### <a id="toio_connect">`connect()`</a>
 
 searchToio()で見つけたToioに接続します。接続結果をboolで返します。
 
@@ -378,7 +437,7 @@ bool connect();
 なし
 
 
-### `disconnect()` 
+### <a id="toio_disconnect">`disconnect()`</a>
 
 接続したToioとの通信を切断します。
 
@@ -393,7 +452,7 @@ void disconnect();
 なし
 
 
-### `isConnected()`
+###  <a id="toio_isConnected">`isConnected()`</a>
 
 Toioとの接続状況をboolで返します。
 
@@ -407,7 +466,7 @@ bool isConnected();
 
 なし
 
-### `getAddress()` 
+### <a id="toio_getAddress">`getAddress()`</a>
 
 Toioの MAC アドレスを返します。
 
@@ -421,7 +480,7 @@ String getAddress();
 
 なし
 
-### `getName()`
+### <a id="toio_getName">`getName()`</a>
 
 接続しているToioの名前を取得します。
 
@@ -435,7 +494,7 @@ String getName();
 
 なし
 
-### `getBleProtocolVersion()`
+### <a id="toio_getBleProtocolVersion">`getBleProtocolVersion()`</a>
 
 接続に利用しているBluetoothプロトコルのバージョンを得ます。
 
@@ -449,7 +508,7 @@ String getBleProtocolVersion();
 
 なし
 
-### `playSoundEffect()` 
+### <a id="toio_playSoundEffect">`playSoundEffect()`</a>
 
 soundIDに対応した効果音を鳴らします。
 
@@ -482,7 +541,7 @@ No. | 変数名      | 型        | 必須   | 説明
 `9`       | Effect 1
 `10`      | Effect 2
 
-### `playSoundRaw()` 
+### <a id="toio_playSoundRaw">`playSoundRaw()`</a>
 
 Toioにて主に MIDI データを再生するために使います。
 
@@ -524,7 +583,7 @@ uint8_t charumera_data[39] = {
 xMod.Toio.playSoundRaw(charumera_data, 39);
 ```
 
-### ` stopSound()` 
+### <a id="toio_stopSound">`stopSound()`</a>
 
 再生中の音の再生を止めます。
 
@@ -538,7 +597,7 @@ void stopSound();
 
 なし
 
-### ` turnOnLed()`
+### <a id="toio_turnOnLed">`turnOnLed()`</a>
 
 Toioの背面にあるLEDを指定した色で点灯させます。
 
@@ -556,7 +615,7 @@ No. | 変数名 | 型        | 必須   | 説明
 2   | `g`   | `uint8_t` | ✔     | 緑コンポーネント (`0` ～ `255`)
 2   | `b`   | `uint8_t` | ✔     | 青コンポーネント (`0` ～ `255`)
 
-### ` turnOffLed()`
+### <a id="toio_turnOffLed">`turnOffLed()`</a>
 
 Toioの背面にあるLEDを消灯させます。
 
@@ -570,7 +629,7 @@ void turnOffLed();
 
 なし
 
-### ` getBatteryLevel()`
+### <a id="toio_getBatteryLevel">`getBatteryLevel()`</a>
 
 バッテリーの残量を取得します。
 
@@ -584,7 +643,7 @@ uint8_t getBatteryLevel();
 
 なし
 
-### ` getButtonState()`
+### <a id="toio_getButtonState">`getButtonState()`</a>
 
 背面のLEDは押しボタンにもなっており、それが押されているかどうかを取得します。
 
@@ -598,7 +657,7 @@ bool getButtonState();
 
 なし
 
-### `getMotion()`
+### <a id="toio_getMotion">`getMotion()`</a>
 
 Toioのモーションセンサーの状態を取得します。
 
@@ -656,7 +715,7 @@ M5.Display.printf("- 姿勢検出: %d\n",  motion.attitude);
 M5.Display.printf("- シェイク検出: %d\n",  motion.shake);
 ```
 
-### `controlMotor()`
+### <a id="toio_controlMotor">`controlMotor()`</a>
 
 Toioのモーターを制御します。
 
@@ -696,7 +755,7 @@ delay(5000);
 xMod.Toio.controlMotor(true, 40, true, 50, 2000);
 delay(5000);
 ```
-### `drive()`
+### <a id="toio_drive">`drive()`</a>
 
 モーター制御をスロットルとステアリング操作に置き換えて行います。
 
@@ -726,7 +785,7 @@ delay(5000);
 xMod.Toio.drive(0, 0);
 ```
 
-### `controlMotorWithTarget()`
+### <a id="toio_controlMotorWithTarget">`controlMotorWithTarget()`</a>
 
 目標地点を一つ指定してモーターを制御し、キューブを自律的に移動させます。
 
@@ -761,7 +820,7 @@ xMod.Toio.controlMotorWithTarget(1, 5, 0, 80, 0, 150, 200, 0);
 delay(5000);
 ```
 
-### `controlMotorWithMultipleTargets()`
+### <a id="toio_controlMotorWithMultipleTargets">`controlMotorWithMultipleTargets()`</a>
 
 目標地点を複数指定してモーターを制御し、キューブを自律的に移動させます。
 
@@ -817,7 +876,7 @@ No. | 変数名         | 型        | 必須   | 説明
   delay(5000);
 ```
 
-### `controlMotorWithAcceleration()`
+### <a id="toio_controlMotorWithAcceleration">`controlMotorWithAcceleration()`</a>
 
 キューブの加速度を指定してモーターを制御します。
 
@@ -849,7 +908,7 @@ xMod.Toio.controlMotorWithAcceleration(50, 15, 30, 0, 0, 0, 200);
 delay(5000);
 ```
 
-### `getIDReaderData()`
+### <a id="toio_getIDReaderData">`getIDReaderData()`</a>
 
 Toioのプレイマット読み取りセンサーの状態を取得します。キューブがマット上にあるとき、マットからセンサーで読み取った値(ID)が取得できます。マットから読み取ることができるIDには、マット上の座標値を表すポジションIDと、キューブが乗っている領域を表すスタンダードIDがあり、どちらかの情報が返されます。
 
@@ -944,7 +1003,14 @@ https://github.com/kenichi884/M5StackToio/blob/master/README_jp.md
 ## <a id="class_midi">MIDI</a>
 ### クラス名：xMod.MIDI
 
-### `begin()` 
+### index
+* [begin()](#midi_begin)
+* [end()](#midi_end)
+* [enable_MIDI()](#midi_enable_MIDI)
+* [disable_MIDI()](#midi_disable_MIDI)
+* [setMode()](#midi_setMode)
+
+### <a id="midi_begin">`begin()`</a>
 MIDIの利用に必要な初期処理を行います。
 
 #### プロトタイプ宣言
@@ -959,7 +1025,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `inChannel`   | `midi::Channel` |   | 起動対象のチャンネルです。指定がなければ”MIDI_CHANNEL_OMNI"となります。
 
-### `end()` 
+### <a id="midi_end">`end()`</a>
 
 MIDIの動作を終了します。
 
@@ -969,7 +1035,7 @@ MIDIの動作を終了します。
 void end();
 ```
 
-### `enable_MIDI()` 
+### <a id="midi_enable_MIDI">`enable_MIDI()`</a>
 
 MIDIの動作を有効化します。
 
@@ -979,7 +1045,7 @@ MIDIの動作を有効化します。
 void enable_MIDI();
 ```
 
-### `disable_MIDI()` 
+### <a id="midi_disable_MIDI">`disable_MIDI()`</a>
 
 MIDIの動作を無効化します。
 
@@ -989,7 +1055,7 @@ MIDIの動作を無効化します。
 void edisable_MIDI();
 ```
 
-### `setMode()` 
+### <a id="midi_setMode">`setMode()`</a>
 MIDIを入力で利用するか、出力で利用するかを指定します。
 
 #### プロトタイプ宣言
@@ -1010,7 +1076,16 @@ No. | 変数名    | 型         | 必須   | 説明
 1   | `mode`     | `xMod_MIDIMode` | ✔︎   | MIDIの入出力モード指定。入力モードなら"MIDI_MODE_IN"、出力モードなら”MIDI_MODE_OUT"を指定。
 
 ## <a id="class_others">その他</a>
-### `xMod.begin()` 
+
+### index
+* [xMod.begin()](#others_begin)
+* [xMod.recordSound()](#others_recordSound)
+* [xMod.Utils.connectWifi()](#others_connectWifi)
+* [xMod.Utils.disconnectWifi()](#others_disconnectWifi)
+* [xMod.DisplayDebug()](#others_DisplayDebug)
+* [xMod.setDebugMode()](#others_setDebugMode)
+
+### <a id = "others_begin">`xMod.begin()` </a>
 xModクラスに関連した初期処理を全て行います。基本的にsetup()内で実行してください。
 
 #### プロトタイプ宣言
@@ -1019,7 +1094,7 @@ xModクラスに関連した初期処理を全て行います。基本的にsetu
 void begin();
 ```
 
-### `xMod.recordSound()` 
+### <a id = "others_recordSound">`xMod.recordSound()` </a>
 指定されたミリ秒の分だけSDカード上に指定したファイル名で録音を行います。
 
 #### プロトタイプ宣言
@@ -1035,7 +1110,7 @@ No. | 変数名    | 型         | 必須   | 説明
 1   | `time`     | `int` | ✔︎   | 録音時間(ms)
 2   | `filename`     | `String` |    | 録音先のファイル名。wavファイルを指定してください。デフォルトは"audio.wav"です。
 
-### `xMod.Utils.connectWifi()` 
+### <a id = "others_connectWifi">`xMod.Utils.connectWifi()` </a>
 指定されたアクセスポイントとWifi接続を行います。接続に成功したかどうかをboolで返します。
 
 #### プロトタイプ宣言
@@ -1051,7 +1126,7 @@ No. | 変数名    | 型         | 必須   | 説明
 1   | `ssid`     | `String` | ✔︎   | アクセスポイントのSSID
 2   | `pass`     | `String` |    |アクセスポイントのパスワード
 
-### `xMod.Utils.disconnectWifi()` 
+### <a id = "others_disconnectWifi">`xMod.Utils.disconnectWifi()` </a>
 Wifiを切断します、
 
 #### プロトタイプ宣言
@@ -1060,7 +1135,7 @@ Wifiを切断します、
 void disconnectWifi();
 ```
 
-### `xMod.DisplayDebug()` 
+### <a id = "others_DisplayDebug">`xMod.DisplayDebug()`</a> 
 デバッグモードとして文字を表示します。
 指定された出力先に文字が表示されます。
 
@@ -1076,7 +1151,7 @@ No. | 変数名    | 型         | 必須   | 説明
 :---|:---------|:-----------|:-------|:-------------
 1   | `message`     | `const String&` | ✔︎   | 表示文章
 
-### `xMod.setDebugMode()` 
+### <a id = "others_setDebugMode">`xMod.setDebugMode()` </a>
 デバッグモードの出力先を指定します。
 出力なし、画面表示、シリアル出力があります。
 
