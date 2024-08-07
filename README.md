@@ -31,7 +31,7 @@ BtnA, BtnB, BtnC(タッチパネル下部にある赤いボタン)
 bool isPressed();
 ```
 
-### `isPressed()` 
+### `wasPressed()` 
 
 新たにボタンが押されたかどうかをboolで返します。
 
