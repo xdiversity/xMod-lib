@@ -1,8 +1,5 @@
 #include "xMod.hpp"
 
-//繋げたいtoioのID
-String toioID = "11b";
-
 uint8_t charumera_data[39] = {
   3,             // 制御の種類 
   1,             // 繰り返し回数
@@ -31,8 +28,8 @@ void setup() {
   
   // Toio接続
   while (!xMod.Toio.isConnected()){
-    xMod.Toio.searchToio(toioID);
-    if (xMod.Toio.connect()){
+    xMod.Toio.searchToio();  //Toioを探す（一番最初に見つけたものが探した結果となる）
+    if (xMod.Toio.connect()){  //見つけたToioに接続する
       M5.Display.println("Toio Connected");
     } else {
       M5.Display.println("Toio Connection Failed");
