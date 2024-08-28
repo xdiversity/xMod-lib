@@ -1,5 +1,5 @@
 # xModLib
-xModを操作するためのライブラリです。m5stack,Toioと共に利用することを想定しています。
+xModを操作するためのライブラリです。M5Stack,Toioと共に利用することを想定しています。
 
 ## 始め方
 1. Visual Studio CodeにPlatformIOをインストールする
@@ -13,24 +13,33 @@ xModを操作するためのライブラリです。m5stack,Toioと共に利用�
 
 3. Visual Studio Code上で、解凍したフォルダ(xMod-lib-main)を開く
 
-4. PlatformIOでプロジェクトフォルダを開く
-  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Projects -> Add Existing -> 解凍したフォルダ内のxMod-lib-main/examples/projectFile/project1 を選択
+4. PlatformIOでサンプルプロジェクトを開く
+  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Projects -> Add Existing -> 解凍したフォルダ内のサンプル（例えば、xMod-lib-main/examples/basic/Button）を選択
 
-5. (任意)srcフォルダ内のmain.cppを書き換えてプログラム作成
-
-6. お手持ちのM5Stackの種類に合わせて環境を選択
+5. お手持ちのM5Stackの種類に合わせて環境を選択
   - ページ下部の「env:〜〜〜」の部分をクリックする
     - M5Stack Core2 なら env:m5stack-core2(project1) を選択
     - M5Stack Cores3 なら env:m5stack-cores3(project1) を選択
 
-7. USBケーブルを使用して、お手持ちのPCとM5Stackを接続
+6. USBケーブルを使用して、お手持ちのPCとM5Stackを接続
 
-8. プログラムした内容をデバイスに書き込み
+7. プログラムした内容をデバイスに書き込み
   -  ページ下部の「→」ボタンを押す
 
-9. 書き込みが完了したら、実際にデバイスを動かしてみてください
+8. 書き込みが完了したら、実際にデバイスを動かしてみてください
 
-#### もしPCがデバイスを見つけてくれない場合は
+### 新しいプロジェクトを作る
+
+1. xMod-lib-main/examples/projects/template を複製して、projects以下に新しい名前のフォルダを作る
+  - 例えば、xMod-lib-main/examples/projects/project1 というフォルダにする。フォルダの深さが変わってしまうと、platform.iniの内容を修正しなければ動かない状態になるので注意してください。
+    - (上級者向け) ``symlink://../../../``の行を修正すると相対パスを変更できます
+
+2. 上記と同じように、PlatformIOでこの新しく作ったプロジェクトフォルダを開く
+
+3. srcフォルダ内のmain.cppを書き換えて、同様にM5Stackに書き込む
+  - 自分の好きなxModを作ってみましょう！
+
+### もしPCがデバイスを見つけてくれない場合は
 - USBドライバをダウンロードしてください。
   - https://docs.m5stack.com/en/download
       - USB DRIVER & OPEN SOURCE LIBRARY の欄からご自身の環境に合ったものを選択してください。
