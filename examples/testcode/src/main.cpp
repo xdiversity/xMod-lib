@@ -137,7 +137,9 @@ void loop() {
       break;
   }
 
-  if (M5.BtnPWR.wasClicked()) {
+  auto touch_detail = M5.Touch.getDetail(); // 画面タッチでモード変更
+  if (touch_detail.wasClicked()){
+  //if (M5.BtnPWR.wasClicked()) { //電源ボタンでモード変更
     test_step++;
     if (test_step > 3) {
         test_step = 0;
@@ -153,7 +155,6 @@ void loop() {
         M5.Display.fillRect(0, 30, 320, 210, BLACK);
         M5.Display.drawCenterString("Step 2 Sound Test", 160, 30);
         M5.Display.drawCenterString("Press upper side buttons", 160, 100);
-        xMod.WaveOut.disable_LRA();
         xMod.WaveOut.enable_Speaker();
         break;
       case 2:
@@ -164,6 +165,7 @@ void loop() {
         xMod.WaveOut.enable_LRA();
         break;
       case 3:
+        xMod.WaveOut.disable_LRA();
         M5.Display.fillRect(0, 30, 320, 210, BLACK);
         M5.Display.drawCenterString("Step 4 Toio Test", 160, 30);
         if (!xMod.Toio.isConnected()){
