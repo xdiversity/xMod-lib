@@ -29,17 +29,18 @@ void setup() {
   //文字出力座標を指定
   M5.Display.setCursor(0, 0);
 
-  M5.Display.setFont(&fonts::Font4);
+  M5.Display.setFont(&fonts::lgfxJapanGothic_20);
   M5.Display.setTextSize(1);
 
   xMod.WaveOut.begin();
   xMod.WaveOut.setVolume(200);
 
   M5.Display.setTextColor(WHITE);
-  M5.Display.drawCenterString("xMod V0.0.1", 160, 0);  // <<<<<<<<<<<  Modify version here
+  M5.Display.drawCenterString("xMod テスト", 160, 0);  // <<<<<<<<<<<  Modify version here
   M5.Display.fillRect(0, 30, 320, 210, BLACK);
-  M5.Display.drawCenterString("Step 1 Button Test", 160, 30);
-  M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+  M5.Display.drawCenterString("Step 1 ボタン", 160, 30);
+  M5.Display.drawCenterString("上側面のボタンを押してください", 160, 100);
+  M5.Display.drawCenterString("画面タッチで次のテストへ", 160, 215);
 
 }
 
@@ -51,14 +52,14 @@ void loop() {
     case 0:  // Button
       if (xMod.BtnL.isPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("ButtonL pressed", 160, 140);
+        M5.Display.drawCenterString("左のボタン", 160, 140);
         M5.Display.setTextColor(WHITE);
       } else {
         M5.Display.fillRect(0, 140, 320, 30, BLACK);
       } 
       if (xMod.BtnR.isPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("ButtonR pressed", 160, 170);
+        M5.Display.drawCenterString("右のボタン", 160, 170);
         M5.Display.setTextColor(WHITE);
       } else {
         M5.Display.fillRect(0, 170, 320, 30, BLACK);
@@ -67,14 +68,14 @@ void loop() {
     case 1: //Sound
       if (xMod.BtnL.wasPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("Low Tone", 160, 140);
+        M5.Display.drawCenterString("低い音", 160, 140);
         M5.Display.setTextColor(WHITE);
         xMod.WaveOut.tone(50, 500, -1, false);
         delay(500);
         M5.Display.fillRect(0, 140, 320, 30, BLACK);
       } else if (xMod.BtnR.wasPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("High Tone", 160, 170);
+        M5.Display.drawCenterString("高い音", 160, 170);
         M5.Display.setTextColor(WHITE);
         xMod.WaveOut.tone(500, 500, -1, false);
         delay(500);
@@ -84,14 +85,14 @@ void loop() {
     case 2: //Vibration
       if (xMod.BtnL.wasPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("Low Frequency", 160, 140);
+        M5.Display.drawCenterString("低い周波数の振動", 160, 140);
         M5.Display.setTextColor(WHITE);
         xMod.WaveOut.tone(50, 500, -1, false);
         delay(500);
         M5.Display.fillRect(0, 140, 320, 30, BLACK);
       } else if (xMod.BtnR.wasPressed()) {
         M5.Display.setTextColor(GREEN);
-        M5.Display.drawCenterString("High Frequency", 160, 170);
+        M5.Display.drawCenterString("高い周波数の振動", 160, 170);
         M5.Display.setTextColor(WHITE);
         xMod.WaveOut.tone(500, 500, -1, false);
         delay(500);
@@ -100,26 +101,28 @@ void loop() {
       break;
     case 3: //Toio
       if (!xMod.Toio.isConnected()){
+        M5.Display.fillRect(0, 215, 320, 25, BLACK);
         xMod.Toio.searchToio();
         if (xMod.Toio.connect()){ 
-          M5.Display.fillRect(0, 100, 320, 30, BLACK);
-          M5.Display.drawCenterString("toio Connected", 160, 100);
+          M5.Display.fillRect(0, 100, 320, 50, BLACK);
+          M5.Display.drawCenterString("toio接続完了！", 160, 100);
           delay(2000);
           M5.Display.fillRect(0, 100, 320, 30, BLACK);
-          M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+          M5.Display.drawCenterString("ボタンを押すとtoioが動作します", 160, 100);
         } 
       }
       if (xMod.Toio.isConnected()){
+        M5.Display.drawCenterString("画面タッチで次のテストへ", 160, 215);
         if (xMod.BtnL.wasPressed()) {
           M5.Display.setTextColor(GREEN);
-          M5.Display.drawCenterString("Play Music", 160, 140);
+          M5.Display.drawCenterString("音楽を再生", 160, 140);
           M5.Display.setTextColor(WHITE);
           xMod.Toio.playSoundRaw(charumera_data, 39);
           delay(4000);
           M5.Display.fillRect(0, 140, 320, 30, BLACK);
         } else if (xMod.BtnR.wasPressed()) {
           M5.Display.setTextColor(GREEN);
-          M5.Display.drawCenterString("Move", 160, 170);
+          M5.Display.drawCenterString("移動", 160, 170);
           M5.Display.setTextColor(WHITE);
           xMod.Toio.controlMotor(true, 10, true, 10, 1000); 
           delay(1000);
@@ -147,31 +150,33 @@ void loop() {
 
     switch (test_step) {
       case 0:
-        M5.Display.fillRect(0, 30, 320, 210, BLACK);
-        M5.Display.drawCenterString("Step 1 Button Test", 160, 30);
-        M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+        M5.Display.fillRect(0, 30, 320, 185, BLACK);
+        M5.Display.drawCenterString("Step 1 ボタン", 160, 30);
+        M5.Display.drawCenterString("上側面のボタンに反応します", 160, 100);
         break;
       case 1:
-        M5.Display.fillRect(0, 30, 320, 210, BLACK);
-        M5.Display.drawCenterString("Step 2 Sound Test", 160, 30);
-        M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+        M5.Display.fillRect(0, 30, 320, 185, BLACK);
+        M5.Display.drawCenterString("Step 2 サウンド", 160, 30);
+        M5.Display.drawCenterString("ボタンを押すと音がなります", 160, 100);
         xMod.WaveOut.enable_Speaker();
         break;
       case 2:
-        M5.Display.fillRect(0, 30, 320, 210, BLACK);
-        M5.Display.drawCenterString("Step 3 Vibration Test", 160, 30);
-        M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+        M5.Display.fillRect(0, 30, 320, 185, BLACK);
+        M5.Display.drawCenterString("Step 3 振動", 160, 30);
+        M5.Display.drawCenterString("ボタンを押すと振動します", 160, 100);
         xMod.WaveOut.disable_Speaker();
         xMod.WaveOut.enable_LRA();
         break;
       case 3:
         xMod.WaveOut.disable_LRA();
-        M5.Display.fillRect(0, 30, 320, 210, BLACK);
-        M5.Display.drawCenterString("Step 4 toio Test", 160, 30);
+        M5.Display.fillRect(0, 30, 320, 185, BLACK);
+        M5.Display.drawCenterString("Step 4 toio", 160, 30);
         if (!xMod.Toio.isConnected()){
-          M5.Display.drawCenterString("Looking for toio...", 160, 100);
+          M5.Display.drawCenterString("toioを探しています...", 160, 100);
+          M5.Display.drawCenterString("toioの電源をONにしてください", 160, 125);
+          M5.Display.fillRect(0, 215, 320, 25, BLACK);
         } else {
-          M5.Display.drawCenterString("Press upper side buttons", 160, 100);
+          M5.Display.drawCenterString("ボタンを押すとtoioが動作します", 160, 100);
         }
         break;
       default:
