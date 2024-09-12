@@ -8,25 +8,24 @@ xModを操作するためのライブラリです。M5Stack,Toioと共に利用�
   - PlatformIOのインストール
     - https://qiita.com/nextfp/items/f54b216212f08280d4e0
 
-2. このレポジトリをダウンロードし、zipを解凍する
+2. このリポジトリをダウンロードし、zipを解凍する
   - 緑の「Code」ボタン -> Download ZIP　をクリック
 
-3. Visual Studio Code上で、解凍したフォルダ(xMod-lib-main)を開く
+3. PlatformIOでサンプルプロジェクトを開く
+  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Projects -> Add Existing -> 解凍したフォルダ内のサンプル（例えば、xMod-lib-main/examples/basic/00_Test）を選択
 
-4. PlatformIOでサンプルプロジェクトを開く
-  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Projects -> Add Existing -> 解凍したフォルダ内のサンプル（例えば、xMod-lib-main/examples/basic/Button）を選択
+4. 手持ちのM5Stackの種類に合わせて環境を選択
+  - ページ下部の「Default (...)」の部分をクリックする
+    - M5Stack Core2 なら env:m5stack-core2 (...) を選択
+    - M5Stack Cores3 なら env:m5stack-cores3 (...) を選択
 
-5. お手持ちのM5Stackの種類に合わせて環境を選択
-  - ページ下部の「env:〜〜〜」の部分をクリックする
-    - M5Stack Core2 なら env:m5stack-core2(project1) を選択
-    - M5Stack Cores3 なら env:m5stack-cores3(project1) を選択
+5. USBケーブルを使用して、PCとM5Stackを接続
 
-6. USBケーブルを使用して、お手持ちのPCとM5Stackを接続
+6. プログラムした内容をビルドしてデバイスに書き込む
+  -  ページ下部の「✓」ボタンを押す
+  -  緑色でSUCCESSと表示されたら、ページ下部の「→」ボタンを押す
 
-7. プログラムした内容をデバイスに書き込み
-  -  ページ下部の「→」ボタンを押す
-
-8. 書き込みが完了したら、実際にデバイスを動かしてみてください
+7. 書き込みが完了したら、実際にデバイスを動かしてみましょう
 
 ### 新しいプロジェクトを作る
 
