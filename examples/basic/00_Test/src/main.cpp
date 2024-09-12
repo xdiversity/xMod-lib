@@ -103,7 +103,7 @@ void loop() {
         xMod.Toio.searchToio();
         if (xMod.Toio.connect()){ 
           M5.Display.fillRect(0, 100, 320, 30, BLACK);
-          M5.Display.drawCenterString("Toio Connected", 160, 100);
+          M5.Display.drawCenterString("toio Connected", 160, 100);
           delay(2000);
           M5.Display.fillRect(0, 100, 320, 30, BLACK);
           M5.Display.drawCenterString("Press upper side buttons", 160, 100);
@@ -167,9 +167,9 @@ void loop() {
       case 3:
         xMod.WaveOut.disable_LRA();
         M5.Display.fillRect(0, 30, 320, 210, BLACK);
-        M5.Display.drawCenterString("Step 4 Toio Test", 160, 30);
+        M5.Display.drawCenterString("Step 4 toio Test", 160, 30);
         if (!xMod.Toio.isConnected()){
-          M5.Display.drawCenterString("Looking for Toio...", 160, 100);
+          M5.Display.drawCenterString("Looking for toio...", 160, 100);
         } else {
           M5.Display.drawCenterString("Press upper side buttons", 160, 100);
         }
