@@ -12,7 +12,7 @@ xModを操作するためのライブラリです。M5Stack,Toioと共に利用�
   - 緑の「Code」ボタン -> Download ZIP　をクリック
 
 3. PlatformIOでサンプルプロジェクトを開く
-  - Visual Studio Codeのメニューからファイル -> フォルダーを開く、解凍した中にあるサンプルフォルダー（例えば、xMod-lib-main/examples/basic/00_Test）を選択
+  - Visual Studio Codeのメニューから「ファイル -> フォルダーを開く」、解凍した中にあるサンプルフォルダー（例えば、xMod-lib-main/examples/basic/00_Test）を選択
 
 4. 手持ちのM5Stackの種類に合わせて環境を選択
   - ページ下部の「Default (...)」の部分をクリックする
