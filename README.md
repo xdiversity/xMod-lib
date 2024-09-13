@@ -12,7 +12,7 @@ xModを操作するためのライブラリです。M5Stack,Toioと共に利用�
   - 緑の「Code」ボタン -> Download ZIP　をクリック
 
 3. PlatformIOでサンプルプロジェクトを開く
-  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Projects -> Add Existing -> 解凍したフォルダ内のサンプル（例えば、xMod-lib-main/examples/basic/00_Test）を選択
+  - PlatformIO(左のツールバー内の狐の顔のようなアイコン) -> PIO Home -> Open -> Open Project -> 解凍したフォルダ内のサンプル（例えば、xMod-lib-main/examples/basic/00_Test）を選択
 
 4. 手持ちのM5Stackの種類に合わせて環境を選択
   - ページ下部の「Default (...)」の部分をクリックする
