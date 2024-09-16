@@ -92,7 +92,7 @@ void loop() {
       //右回転
       xMod.Toio.controlMotor(true, 10, false, 10, 1000); 
       delay(1000);
-      //右回転
+      //左回転
       xMod.Toio.controlMotor(false, 10, true, 10, 1000); 
       delay(1000);
     }
