@@ -2,7 +2,7 @@
 xModを操作するためのライブラリです。M5Stack,Toioと共に利用することを想定しています。
 
 ## 手軽なテスト方法（コーディング不要・M5Core2向け・M5Burner使用）
-M5Stackが提供するM5Burnerを使ってテストプログラムの書き込みを行います。
+M5Stackが提供するM5Burnerを使って各種デバイスの動作確認ができるテストプログラムの書き込みを行います。
 1. M5Burnerをインストール（適切なOSを選択してください）
    - https://docs.m5stack.com/en/uiflow/m5burner/intro
 2. M5Burnerを起動（M5Burner.exe等をダブルクリック）し、起動後の左側のメニューから「Core2 / Tough」を選択
