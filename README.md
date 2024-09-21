@@ -1,7 +1,27 @@
 # xModLib
 xModを操作するためのライブラリです。M5Stack,Toioと共に利用することを想定しています。
 
-## 始め方
+## 手軽なテスト方法（コーディング不要・M5Core2向け・M5Burner使用）
+M5Stackが提供するM5Burnerを使ってテストプログラムの書き込みを行います。
+1. M5Burnerをインストール（適切なOSを選択してください）
+   - https://docs.m5stack.com/en/uiflow/m5burner/intro
+2. M5Burnerを起動（M5Burner.exe等をダブルクリック）し、起動後の左側のメニューから「Core2 / Tough」を選択
+3. 上のSearch（検索窓）に「xMod」と入力して「xMod Example 00 Test」を探し、右下の「Download」を押す
+   ![2024-09-21_09h05_27](https://github.com/user-attachments/assets/3299bc12-a854-481e-9761-46b7684dcaef)
+5. xModと接続された（組み立て済みの）M5Core2とPCをUSB-Cケーブルで接続し、右下の「Burn」を押す
+　![2024-09-21_09h56_27](https://github.com/user-attachments/assets/cda9cb0d-084d-478f-8c8c-acd5b327e40d)
+ - ※下記画面が出た場合は内容を確認の上Continueを押してください
+  ![2024-09-21_09h56_34](https://github.com/user-attachments/assets/0ee780e3-678e-412d-a8b6-1af2bdd5986e)
+7. 「COM」でM5Core2が接続されたシリアルポートを選択し、Startを押す
+   ![2024-09-21_09h56_44](https://github.com/user-attachments/assets/5e8d2a62-ba2c-49dc-bffb-0da8a6f9bdb0)
+   - BaudRateを変更する必要はありませんが、失敗が連続するようであれば115200を選択してみてください
+   - それでも失敗する場合はM5Stack Core2のリセットボタン（回転矢印マーク）を押してみてください
+   - それでも書き込みがうまくいかない場合は、USBケーブルの接続状態、シリアルポートが適切か、xModがきちんと組み立てられているかを確認してください
+8. 下記画面が出れば書き込み成功です
+![2024-09-21_10h01_56](https://github.com/user-attachments/assets/d2ec2f5c-bf38-4853-aec7-29e5fcdc5d5d)
+
+
+## 開発の始め方
 1. Visual Studio CodeにPlatformIOをインストールする
   - Visual Studio Codeのインストール
     - https://code.visualstudio.com/download
