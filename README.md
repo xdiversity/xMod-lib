@@ -6,19 +6,19 @@ M5Stackが提供するM5Burnerを使って各種デバイスの動作確認が�
 1. M5Burnerをインストール（適切なOSを選択してください）
    - https://docs.m5stack.com/en/uiflow/m5burner/intro
 2. M5Burnerを起動（M5Burner.exe等をダブルクリック）し、起動後の左側のメニューから「Core2 / Tough」を選択
-3. 上のSearch（検索窓）に「xMod」と入力して「xMod Example 00 Test」を探し、右下の「Download」を押す
-   ![2024-09-21_09h05_27](https://github.com/user-attachments/assets/3299bc12-a854-481e-9761-46b7684dcaef)
-5. xModと接続された（組み立て済みの）M5Core2とPCをUSB-Cケーブルで接続し、右下の「Burn」を押す
-　![2024-09-21_09h56_27](https://github.com/user-attachments/assets/cda9cb0d-084d-478f-8c8c-acd5b327e40d)
+3. 上のSearch（検索窓）に「xMod」と入力して「xMod Example 00 Test」(またはxMod Device Demo with BT Speaker)を探し、右下の「Download」を押す
+　![image](https://github.com/user-attachments/assets/8a177adf-fb6b-40fd-9c09-d8c557cc7f44)
+4. xModと接続された（組み立て済みの）M5Core2とPCをUSB-Cケーブルで接続し、右下の「Burn」を押す
+  ![image](https://github.com/user-attachments/assets/443fe01f-6099-416a-945a-6f2f7882479a)
  - ※下記画面が出た場合は内容を確認の上Continueを押してください
-  ![2024-09-21_09h56_34](https://github.com/user-attachments/assets/0ee780e3-678e-412d-a8b6-1af2bdd5986e)
-7. 「COM」でM5Core2が接続されたシリアルポートを選択し、Startを押す
-   ![2024-09-21_09h56_44](https://github.com/user-attachments/assets/5e8d2a62-ba2c-49dc-bffb-0da8a6f9bdb0)
+　![image](https://github.com/user-attachments/assets/5daff123-95df-4f99-aabc-9fadee83bb45)
+5. 「COM」でM5Core2が接続されたシリアルポートを選択し、Startを押す
+　![image](https://github.com/user-attachments/assets/485bd8ce-9e87-4f90-8961-d0c015569e2e)
    - BaudRateを変更する必要はありませんが、失敗が連続するようであれば115200を選択してみてください
    - それでも失敗する場合はM5Stack Core2のリセットボタン（回転矢印マーク）を押してみてください
    - それでも書き込みがうまくいかない場合は、USBケーブルの接続状態、シリアルポートが適切か、xModがきちんと組み立てられているかを確認してください
-8. 下記画面が出れば書き込み成功です
-![2024-09-21_10h01_56](https://github.com/user-attachments/assets/d2ec2f5c-bf38-4853-aec7-29e5fcdc5d5d)
+6. 下記画面が出れば書き込み成功です
+　![image](https://github.com/user-attachments/assets/1b7afd3b-604c-433d-ace5-cead2b465f68)
 
 
 ## 開発の始め方
