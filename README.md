@@ -1,6 +1,10 @@
 # xModLib
 xModを操作するためのライブラリです。M5Stack,Toioと共に利用することを想定しています。
 
+## 組み立て方法（動画）
+[![Video of the assembly using xMod.](https://github.com/user-attachments/assets/2db11cee-176b-4c3a-81d0-72c98ba0b571)](https://youtu.be/ZksChZVwLn0?feature=shared)
+
+
 ## 手軽なテスト方法（コーディング不要・M5Core2向け・M5Burner使用）
 M5Stackが提供するM5Burnerを使って各種デバイスの動作確認ができるテストプログラムの書き込みを行います。
 1. M5Burnerをインストール（適切なOSを選択してください）
