@@ -1,72 +1,10 @@
 # xModLib
+
 xModを操作するためのライブラリです。M5Stack,Toioと共に利用することを想定しています。
+xModに関する情報は[Wiki](https://github.com/xdiversity/xMod-lib/wiki)をご参照ください。
 
-## xModの組み立て，xModLibライブラリの導入方法（動画）
-[![Video of the assembly using xMod.](https://github.com/user-attachments/assets/2db11cee-176b-4c3a-81d0-72c98ba0b571)](https://youtu.be/ZksChZVwLn0?feature=shared)
-xModをロボット・トイtoio™とM5Stack Core2/CoreS3と組み合わせる方法，xModのライブラリを導入する流れを動画で説明しております．
-
-## 手軽なテスト方法（コーディング不要・M5Core2向け・M5Burner使用）
-M5Stackが提供するM5Burnerを使って各種デバイスの動作確認ができるテストプログラムの書き込みを行います。
-1. M5Burnerをインストール（適切なOSを選択してください）
-   - https://docs.m5stack.com/en/uiflow/m5burner/intro
-2. M5Burnerを起動（M5Burner.exe等をダブルクリック）し、起動後の左側のメニューから「Core2 / Tough」を選択
-3. 上のSearch（検索窓）に「xMod」と入力して「xMod Example 00 Test」(またはxMod Device Demo with BT Speaker)を探し、右下の「Download」を押す
-　![image](https://github.com/user-attachments/assets/8a177adf-fb6b-40fd-9c09-d8c557cc7f44)
-4. xModと接続された（組み立て済みの）M5Core2とPCをUSB-Cケーブルで接続し、右下の「Burn」を押す
-  ![image](https://github.com/user-attachments/assets/443fe01f-6099-416a-945a-6f2f7882479a)
- - ※下記画面が出た場合は内容を確認の上Continueを押してください
-　![image](https://github.com/user-attachments/assets/5daff123-95df-4f99-aabc-9fadee83bb45)
-5. 「COM」でM5Core2が接続されたシリアルポートを選択し、Startを押す
-　![image](https://github.com/user-attachments/assets/485bd8ce-9e87-4f90-8961-d0c015569e2e)
-   - BaudRateを変更する必要はありませんが、失敗が連続するようであれば115200を選択してみてください
-   - それでも失敗する場合はM5Stack Core2のリセットボタン（回転矢印マーク）を押してみてください
-   - それでも書き込みがうまくいかない場合は、USBケーブルの接続状態、シリアルポートが適切か、xModがきちんと組み立てられているかを確認してください
-6. 下記画面が出れば書き込み成功です
-　![image](https://github.com/user-attachments/assets/1b7afd3b-604c-433d-ace5-cead2b465f68)
-
-
-## 開発の始め方
-1. Visual Studio CodeにPlatformIOをインストールする
-  - Visual Studio Codeのインストール
-    - https://code.visualstudio.com/download
-  - PlatformIOのインストール
-    - https://qiita.com/nextfp/items/f54b216212f08280d4e0
-
-2. このリポジトリをダウンロードし、zipを解凍する
-  - 緑の「Code」ボタン -> Download ZIP　をクリック
-
-3. PlatformIOでサンプルプロジェクトを開く
-  - Visual Studio Codeのメニューから「ファイル -> フォルダーを開く」、解凍した中にあるサンプルフォルダー（例えば、xMod-lib-main/examples/basic/00_Test）を選択
-
-4. 手持ちのM5Stackの種類に合わせて下記の方法で環境を選択する
-  - Visual Studio Codeのウィンドウの一番下にあるステータスバー中央付近にある「Default (...)」の部分をクリックする
-    - M5Stack Core2 なら env:m5stack-core2 (...) を選択
-    - M5Stack Cores3 なら env:m5stack-cores3 (...) を選択
-
-5. USB-Cケーブルを使用して、PCとM5Stack(Core2またはCoreS3)を接続
-
-6. プログラムした内容を下記の方法でビルドしてデバイスに書き込む
-  -  ページ下部の「✓」ボタンを押す
-  -  緑色でSUCCESSと表示されたら、ページ下部の「→」ボタンを押す
-
-7. 書き込みが完了したら、実際にデバイスを動かしてみましょう
-  -  xModの側面にある2つのボタンを押したりしてみましょう
-
-### 新しいプロジェクトを作る
-
-1. xMod-lib-main/examples/projects/template を複製して、projects以下に新しい名前のフォルダを作る
-  - 例えば、xMod-lib-main/examples/projects/project1 というフォルダにする。フォルダの深さが変わってしまうと、platform.iniの内容を修正しなければ動かない状態になるので注意してください。
-    - (上級者向け) ``symlink://../../../``の行を修正すると相対パスを変更できます
-
-2. 上記と同じように、PlatformIOでこの新しく作ったプロジェクトフォルダを開く
-
-3. srcフォルダ内のmain.cppを書き換えて、同様にM5Stackに書き込む
-  - 自分の好きなxModを作ってみましょう！
-
-### もしPCがデバイスを見つけてくれない場合は
-- USBドライバをダウンロードしてください。
-  - https://docs.m5stack.com/en/download
-      - USB DRIVER & OPEN SOURCE LIBRARY の欄からご自身の環境に合ったものを選択してください。
+- [xModの組み立て・導入方法](https://github.com/xdiversity/xMod-lib/wiki/xMod%E3%81%AE%E7%B5%84%E3%81%BF%E7%AB%8B%E3%81%A6%E3%83%BB%E5%B0%8E%E5%85%A5)
+- [xModに関するよくある質問](https://github.com/xdiversity/xMod-lib/wiki/FAQ)
 
 ## 関数一覧
 ### Index
